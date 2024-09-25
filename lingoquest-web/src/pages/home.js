@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import "../assets/home.css"
 
 function Home() {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +18,7 @@ function Home() {
                     </button>
                    
                     <ul className="nav-links">
-                        <li><a href="#välkommen" className={isOpen ? 'show' : ''}>Välkommen</a></li>
+                        <li><Link to="/checklist" className={isOpen ? 'show' : ''}>Välkommen/</Link></li>
                         <li><a href="#historia" className={isOpen ? 'show' : ''}>Historia</a></li>
                         <li><a href="#prov" className={isOpen ? 'show' : ''}>Prov</a></li>
                         <li><a href="#statestik" className={isOpen ? 'show' : ''}>Statestik</a></li>
@@ -28,7 +30,7 @@ function Home() {
                 <h2>Main Content</h2>
 
                 <div className="button-container" id="menubuttons">
-                    <button>Välkommen till LingoQuest</button>
+                    <Link to="/checklist"><button>Välkommen till LingoQuest</button></Link>
                     <button>Historia</button>
                     <button>Prov</button>
                     <button>Statestik</button>
