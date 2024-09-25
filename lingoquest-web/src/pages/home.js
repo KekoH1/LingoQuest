@@ -5,21 +5,23 @@ function Home() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
+ 
+     
     return (
         <div>
             <header>
-                <h4>Header</h4>
                 <nav className={`navbar ${isOpen ? 'open' : ''}`}>
                     <button className="hamburger" onClick={toggleMenu}>
                         &#9776;
                     </button>
-                    <ul className={`nav-links ${isOpen ? 'show' : ''}`}>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                   
+                    <ul className="nav-links">
+                        <li><a href="#välkommen" className={isOpen ? 'show' : ''}>Välkommen</a></li>
+                        <li><a href="#historia" className={isOpen ? 'show' : ''}>Historia</a></li>
+                        <li><a href="#prov" className={isOpen ? 'show' : ''}>Prov</a></li>
+                        <li><a href="#statestik" className={isOpen ? 'show' : ''}>Statestik</a></li>
                     </ul>
+
                 </nav>
             </header>
             <main>

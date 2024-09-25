@@ -79,6 +79,80 @@ h2 {
 }
 
 
+/* Navbar */
+.navbar {
+    width: 70px; /* Smal initial bredd */
+    height: 7vh;
+    position: fixed;
+    left: 200;
+    top: 10;
+    background-color: #5e5e5e; /* Mörk bakgrund för tydlighet */
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.navbar.open {
+    width: 250px;
+    height: 100%;
+}
+
+/* Hamburger button */
+.hamburger {
+    padding: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    outline: none;
+}
+
+/* Navbar links */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.nav-links a {
+    padding: 15px 10px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    opacity: 0; 
+    transform: translateX(-20px); 
+}
+
+.nav-links a.show {
+    opacity: 1;
+    transform: translateX(0); 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #444; 
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 50px; 
+    }
+
+    .navbar.open {
+        width: 200px;
+    }
+
+    .nav-links a {
+        font-size: 16px; 
+    }
+}
+
 footer {
     text-align: center;
     padding: 20px;
