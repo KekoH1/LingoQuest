@@ -16,6 +16,11 @@ function Navbar() {
           </button>
 
           <ul className="nav-links">
+          <li>
+              <Link to="/" className={isOpen ? "show" : ""}>
+                Hem
+              </Link>
+            </li>
             <li>
               <Link to="/checklist" className={isOpen ? "show" : ""}>
                 Välkommen
