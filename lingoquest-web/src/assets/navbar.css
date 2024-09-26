@@ -1,0 +1,101 @@
+.navbar {
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    left: 1px;
+    top: 1px;
+    background-color: #acacac;
+    transition: width 0.3s ease, height 0.3s ease;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+
+.navbar.open {
+    width: 250px;
+    height: 100vh;
+    border-radius: 0;
+}
+
+.hamburger {
+    padding: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    outline: none;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+    transform: rotate(90deg);
+}
+
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-links a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.navbar.open .nav-links a {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 40px;
+        height: 40px;
+        left: 5px;
+        top: 5px;
+    }
+
+    .navbar.open {
+        width: 200px;
+        height: 100vh;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+}
+
+
+/* Om man vill ha en navbar som är synlig endast på mindre skärmar */
+
+/* 
+@media (min-width: 769px) {
+    .navbar {
+        display: none;
+    }
+} */
