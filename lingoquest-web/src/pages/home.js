@@ -28,12 +28,14 @@ function Home() {
                 <h2>Main Content</h2>
 
                 <div className="button-container" id="menubuttons">
-                    <button>Välkommen till LingoQuest</button>
+                    <button a href="#välkommen" >Välkommen till LingoQuest</button>
                     <button>Historia</button>
                     <button>Prov</button>
                     <button>Statestik</button>
                 </div>
             </main>
+            
+
 
             <footer>
                 <div className="footer-content">
