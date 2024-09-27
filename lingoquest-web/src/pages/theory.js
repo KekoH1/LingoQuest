@@ -16,18 +16,11 @@ function theory() {
                 <ul className="menubuttons" >
                     <li><a href="kap1">Kapitel 1. Historia</a></li>
                     <li><a href="kap2">Kapitel 2. Morderna Språket</a></li>
-                    <li><a href="kap3">Verb</a></li>
-                    <li><a href="kap4">Sammanfattning</a></li>
+                    <li><a href="kap3">Kapitel 3.Verb</a></li>
+                    <li><a href="kap4">Kapitel 4. Sammanfattning</a></li>
                 </ul>
             </div>
-
-
         </main>
-
-
-
-
-
     </div>
   )
 }
