@@ -1,17 +1,10 @@
-/* General Styles */
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 100px;
+    padding: center;
     background-color: #f4f4f4;
     color: #333;
-
-}
-
-header {
-    background-color: #f4f4f4;
-    color: rgb(0, 0, 0);
-    padding: 10px 0;
 }
 
 
@@ -28,19 +21,29 @@ h2 {
 }
 
 
+h3 {
+    font-size: 1,2em;
+    margin: 20px;
+    justify-content: center;
+    display: flex;
+
+}
+
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Centered Menu Buttons */
-#menubuttons {
+
+.menubuttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Equal distance between buttons */
+    gap: 20px; 
     margin-top: 50px;
 }
 
@@ -60,6 +63,29 @@ h2 {
 
 #menubuttons button:hover {
     background-color: #0056b3;
+
+    gap: 20px; 
+    margin-top: 50px;
+}
+
+.menubuttons a { 
+    text-decoration: none; 
+    background-color: #8e9499; 
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 300px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.menubuttons a:hover {
+    background-color: #8f9faf; 
 }
 
 @media (max-width: 768px) {
@@ -67,98 +93,15 @@ h2 {
         padding: 10px;
     }
 
-    #menubuttons {
+
+    .menubuttons {
         flex-direction: column;
         gap: 10px;
     }
 
-    #menubuttons button {
+
+    .menubuttons a {
         width: 100%;
         max-width: 300px;
     }
-}
-
-
-/* Navbar */
-.navbar {
-    width: 70px; /* Smal initial bredd */
-    height: 7vh;
-    position: fixed;
-    left: 200;
-    top: 10;
-    background-color: #5e5e5e; /* Mörk bakgrund för tydlighet */
-    transition: width 0.3s ease;
-    overflow: hidden;
-    z-index: 10;
-}
-
-.navbar.open {
-    width: 250px;
-    height: 100%;
-}
-
-/* Hamburger button */
-.hamburger {
-    padding: 20px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    outline: none;
-}
-
-/* Navbar links */
-.nav-links {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding-left: 10px;
-    margin-top: 20px;
-}
-
-.nav-links a {
-    padding: 15px 10px;
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    transition: all 0.3s ease;
-    font-size: 18px;
-    opacity: 0; 
-    transform: translateX(-20px); 
-}
-
-.nav-links a.show {
-    opacity: 1;
-    transform: translateX(0); 
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.nav-links a:hover {
-    background-color: #444; 
-}
-
-
-@media (max-width: 768px) {
-    .navbar {
-        width: 50px; 
-    }
-
-    .navbar.open {
-        width: 200px;
-    }
-
-    .nav-links a {
-        font-size: 16px; 
-    }
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #858585;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }

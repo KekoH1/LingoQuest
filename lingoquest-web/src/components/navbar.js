@@ -1,51 +1,31 @@
-import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import '../assets/navbar.css';
 
-function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div>
-      <header>
-        <nav className={`navbar ${isOpen ? "open" : ""}`}>
-          <button className="hamburger" onClick={toggleMenu}>
-            &#9776;
-          </button>
-
-          <ul className="nav-links">
-          <li>
-              <Link to="/" className={isOpen ? "show" : ""}>
-                Hem
-              </Link>
-            </li>
-            <li>
-              <Link to="/checklist" className={isOpen ? "show" : ""}>
-                Välkommen
-              </Link>
-            </li>
-            <li>
-              <a href="#historia" className={isOpen ? "show" : ""}>
-                Historia
-              </a>
-            </li>
-            <li>
-              <a href="#prov" className={isOpen ? "show" : ""}>
-                Prov
-              </a>
-            </li>
-            <li>
-              <a href="#statestik" className={isOpen ? "show" : ""}>
-                Statestik
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    </div>
-  );
+    <header>
+    <nav className={`navbar ${isOpen ? 'open' : ''}`}>
+        <button className="hamburger" onClick={toggleMenu}>
+                        &#9776;
+        </button>
+                   
+        <ul className="nav-links" >
+        <li><Link to="/">Hem</Link></li>
+        <li><Link to="välkommen">Välkommen</Link></li>
+        <li><Link to="theory">Teori</Link></li>
+        <li><Link to="prov">Prov</Link></li>
+        <li><Link to="satestik">Statestik</Link></li>
+        </ul>
+     </nav>
+    </header>
+  )
 }
 
-export default Navbar;
+export default Navbar

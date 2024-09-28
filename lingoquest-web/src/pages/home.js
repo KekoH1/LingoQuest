@@ -1,35 +1,31 @@
 import React, { useState } from 'react';
+
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
+import '../assets/navbar.css';
 import { Link } from 'react-router-dom';
-import "../assets/home.css"
 
 function Home() {
-    
- 
-     
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <div>
-
+           <Navbar /> 
             <main>
-                <h2>Main Content</h2>
-
-                <div className="button-container" id="menubuttons">
-                    <Link to="/checklist"><button>Välkommen till LingoQuest</button></Link>
-                    <button>Historia</button>
-                    <button>Prov</button>
-                    <button>Statestik</button>
+                <h2>LingoQuest</h2>
+                <h3>Det nya snabba sättet att lära sig nya språk</h3>
+                <div>
+                    <ul className="menubuttons" >
+                        <li><Link to="välkommen">Välkommen</Link></li>
+                        <li><Link to="theory">Teori</Link></li>
+                        <li><Link to="prov">Prov</Link></li>
+                        <li><Link to="statestik">Statestik</Link></li>
+                    </ul>
                 </div>
             </main>
-
-            <footer>
-                <div className="footer-content">
-                    <p>&copy; 2024 LingoQuest. All rights reserved.</p>
-                    <div className="social-media">
-                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-                        <a href="https://www.x.com" target="_blank" rel="noopener noreferrer">X</a>
-                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    </div>
-                </div>
-            </footer>
+            <Footer />  
         </div>
     );
 }
