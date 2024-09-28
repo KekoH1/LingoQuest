@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
+import '../assets/navbar.css';
 import  "../assets/checklist.css"
+import Navbar from "../components/navbar";
+
+
 const LabelChecklist = () => {
   const [labels, setLabel] = useState([]);
 
@@ -16,6 +20,7 @@ const LabelChecklist = () => {
     ]);
   }, []);
 
+
  
   const handleSelection = (id) => {
     setLabel((prev) =>
@@ -27,6 +32,7 @@ const LabelChecklist = () => {
 
   return (
     <div>
+      <Navbar />
       <div className="container">
         <h1 className="h1">Välkommen till LingoQuest</h1>
         <h4 className="h4">Här kan du ha koll på dina framsteg.</h4>
