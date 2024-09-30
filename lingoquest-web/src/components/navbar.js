@@ -18,10 +18,10 @@ const Navbar = () => {
                    
         <ul className="nav-links" >
         <li><Link to="/">Hem</Link></li>
-        <li><Link to="välkommen">Välkommen</Link></li>
-        <li><Link to="theory">Teori</Link></li>
-        <li><Link to="prov">Prov</Link></li>
-        <li><Link to="satestik">Statestik</Link></li>
+        <li><Link to="/checklist">Välkommen</Link></li>
+        <li><Link to="/theory">Teori</Link></li>
+        <li><Link to="/prov">Prov</Link></li>
+        <li><Link to="/satestik">Statestik</Link></li>
         </ul>
      </nav>
     </header>

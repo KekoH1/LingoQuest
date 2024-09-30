@@ -83,6 +83,11 @@ h3 {
     transition: background-color 0.3s ease;
     cursor: pointer;
 }
+.menubuttons li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
 .menubuttons a:hover {
     background-color: #8f9faf; 
