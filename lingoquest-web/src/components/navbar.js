@@ -23,8 +23,13 @@ const Navbar = () => {
         <li><Link to="/prov">Prov</Link></li>
         <li><Link to="/satestik">Statestik</Link></li>
         </ul>
+        <ul className="reviewbutton" >
+        <li><Link to="/review">Recensioner</Link></li>
+        </ul>
+
      </nav>
     </header>
+
   )
 }
 
