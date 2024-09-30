@@ -1,0 +1,45 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #444;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.header {
+    background: linear-gradient(135deg, #6200ea, #3700b3);
+    border-radius: 12px;
+}
+
+.header h1 {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.review-card h2 {
+    font-size: 2em;
+}
+
+.button {
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.footer {
+    font-size: 0.9em;
+    color: #555;
+}

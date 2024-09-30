@@ -12,6 +12,8 @@ import Kap3 from './pages/kap/kap3';
 import Kap4 from './pages/kap/kap4';
 import Prov from './pages/prov';  
 import Prov1 from './pages/prover/prov1';
+import Reviw from './pages/review';
+
 
 import LabelChecklist from './pages/checklist';
 
@@ -29,6 +31,7 @@ function App() {
         <Route path="/kap4" element={<Kap4/>} />
         <Route path="/prov" element={<Prov />} />
        <Route path="/prov1" element={<Prov1/>} />
+       <Route path="/review" element={<Reviw/>} />
       </Routes>
     </Router> 
     

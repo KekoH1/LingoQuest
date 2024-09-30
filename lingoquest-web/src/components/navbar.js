@@ -24,7 +24,7 @@ const Navbar = () => {
         <li><Link to="/satestik">Statestik</Link></li>
         </ul>
         <ul className="reviewbutton" >
-        <li><Link to="/review">Recensioner</Link></li>
+        <li><Link to="/review">⭐Recensioner</Link></li>
         </ul>
 
      </nav>
