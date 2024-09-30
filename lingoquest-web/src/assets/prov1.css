@@ -1,0 +1,168 @@
+
+.quiz-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px; 
+    border-radius: 8px; 
+    background-color: #7da1aee9; 
+    box-shadow: 0 4px 8px rgba(0, 33, 201, 0.66); 
+}
+
+h1 {
+    text-align: center; 
+    font-size: 2.5em; 
+    color: #333333; 
+}
+
+.quiz-item {
+    border: 1px solid #e0e0e0; 
+    border-radius: 5px; 
+    margin-bottom: 20px; 
+    padding: 15px; 
+    background-color: #e4f7f5; 
+}
+
+h2 {
+    font-size: 1.5em; 
+    color: #555555; 
+}
+
+h3 {
+    font-size: 1.2em; 
+    color: #777777; 
+}
+
+.button-container {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center; 
+    margin-top: 15px;
+
+ 
+}
+
+.word-button {
+    margin: 5px; 
+    padding: 10px 300px; 
+    border: none; 
+    border-radius: 15px;
+    background-color: #8e9499;
+    color: white;
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    font-size: 1em; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    
+    
+}
+
+.word-button:hover {
+    background-color: #0b1027; 
+    transform: translateY(-2px); 
+}
+
+.loading,
+.error {
+    text-align: center; 
+    font-size: 1.2em; 
+    color: #ff0000; 
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+}
+
+.correct-answer {
+    color: green;
+    font-weight: bold;
+}
+
+.word-button.selected {
+    background-color: red; 
+}
+
+.word-button.selected.correct {
+    background-color: green;
+}
+
+.review-form {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    text-align: left;
+  
+}
+
+.review-form h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.review-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.review-form input[type="text"],
+.review-form textarea {
+    width: 100%;
+    padding: 1px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.review-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review-form button:hover {
+    background-color: #218838;
+}
+
+
+.thank-you-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.ResetQuizButton{
+
+    padding: 10px 20px;
+    background-color: #264e30;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
