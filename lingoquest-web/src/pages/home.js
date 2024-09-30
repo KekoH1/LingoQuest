@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import '../assets/navbar.css';
@@ -18,7 +17,7 @@ function Home() {
                 <h3>Det nya snabba sättet att lära sig nya språk</h3>
                 <div>
                     <ul className="menubuttons" >
-                        <li><Link to="välkommen">Välkommen</Link></li>
+                        <li><Link to="Checklist">Välkommen</Link></li>
                         <li><Link to="theory">Teori</Link></li>
                         <li><Link to="prov">Prov</Link></li>
                         <li><Link to="statestik">Statestik</Link></li>
