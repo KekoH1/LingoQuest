@@ -80,7 +80,7 @@ const ReviewSection = () => {
         <div className="review-section">
             <h2>Submit Your Review</h2>
             <form onSubmit={handleSubmitReview}>
-                <div>
+                <div class="form-element">
                     <label>Your Name:</label>
                     <input
                         type="text"
@@ -89,14 +89,7 @@ const ReviewSection = () => {
                         required
                     />
                 </div>
-                <div>
-                    <label>Your Review:</label>
-                    <textarea
-                        value={reviewDescription}
-                        onChange={(e) => setReviewDescription(e.target.value)}
-                        required
-                    ></textarea>
-                </div>
+                <div class="form-element">
                     <label>Email:</label>
                     <input
                         type="email"
@@ -104,6 +97,16 @@ const ReviewSection = () => {
                         onChange={(e) => setReviewEmail(e.target.value)}
                         required
                     />
+                </div>
+                <div class="form-element">
+                    <label>Your Review:</label>
+                    <textarea
+                        value={reviewDescription}
+                        onChange={(e) => setReviewDescription(e.target.value)}
+                        required
+                    ></textarea>
+                </div>
+                    
                 <button type="submit">Submit Review</button>
             </form>
 
@@ -112,7 +115,10 @@ const ReviewSection = () => {
                     <h3>Thank you for your review!</h3>
                 </div>
             )}
-
+        </div>
+        
+        
+        <div className="previous-review">    
             <h2>Previous Reviews</h2>
             {reviews.length === 0 ? (
                 <p>No reviews available</p>
@@ -129,6 +135,7 @@ const ReviewSection = () => {
             )}
         </div>
         </div>
+        
     );
 };
 

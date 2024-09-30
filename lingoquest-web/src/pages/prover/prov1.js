@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../../assets/prov1.css';
 import Navbar from '../../components/navbar';
+
+
 const Prov1 = () => {
     const [quizzes, setQuizzes] = useState([]);
     const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
@@ -10,10 +12,7 @@ const Prov1 = () => {
     const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [userSelections, setUserSelections] = useState({});
-    const [showReviewForm, setShowReviewForm] = useState(false);  
-    const [reviewName, setReviewName] = useState('');  
-    const [reviewDescription, setReviewDescription] = useState('');  
-    const [reviewSubmitted, setReviewSubmitted] = useState(false); 
+    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -58,44 +57,8 @@ const Prov1 = () => {
             setSelectedWord(null);
         } else {
             setShowResult(true);
-            setShowReviewForm(true);  
         }
     };
-
-    const handleSubmitReview = async (e) => {
-        e.preventDefault();
-
-        const reviewData = {
-            name: reviewName,
-            description: reviewDescription
-        };
-
-        try {
-            const response = await fetch('https://localhost:7196/api/Reviews', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(reviewData)
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to submit review');
-            }
-
-            setReviewSubmitted(true); 
-        } catch (error) {
-            setError(error.message);
-        }
-    };
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
 
     if (showResult) {
         return (
@@ -126,42 +89,7 @@ const Prov1 = () => {
                         );
                     })}
                 </ul>
-
-                {showReviewForm && !reviewSubmitted && (
-                    <div className="review-form">
-                        <h2>Submit Your Review</h2>
-                        <form onSubmit={handleSubmitReview}>
-                            <div>
-                                <label>Your Name:</label>
-                                <input
-                                    type="text"
-                                    value={reviewName}
-                                    onChange={(e) => setReviewName(e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label>Your Review:</label>
-                                <textarea
-                                    value={reviewDescription}
-                                    onChange={(e) => setReviewDescription(e.target.value)}
-                                    required
-                                ></textarea>
-                            </div>
-                            <button type="submit">Submit Review</button>
-                        </form>
-                    </div>
-                )}
-
-                {reviewSubmitted && (
-                    <div>
-                        <h3>Thank you for your review!</h3>
-                    </div>
-                )}
-                   <br/>
-                   <br/>
-                <button className = "ResetQuizButton"  onClick={() => window.location.reload()}>Restart Quiz</button>
-            </div>
+        </div>
         );
     }
 
