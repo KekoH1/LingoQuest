@@ -20,7 +20,7 @@ function Home() {
                         <li><Link to="Checklist">Välkommen</Link></li>
                         <li><Link to="theory">Teori</Link></li>
                         <li><Link to="prov">Prov</Link></li>
-                        <li><Link to="statestik">Statestik</Link></li>
+                        <li><Link to="Statestik">Statistik</Link></li>
                     </ul>
                 </div>
             </main>
