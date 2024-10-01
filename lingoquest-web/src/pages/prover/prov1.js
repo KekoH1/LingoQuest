@@ -12,7 +12,17 @@ const Prov1 = () => {
     const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [userSelections, setUserSelections] = useState({});
-    
+    const [shuffledWords, setShuffledWords] = useState([]);
+
+  
+    const shuffleArray = (array) => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,6 +33,7 @@ const Prov1 = () => {
                 }
                 const data = await response.json();
                 setQuizzes(data);
+                setShuffledWords(shuffleArray(data[0].missingWords)); 
             } catch (error) {
                 setError(error.message);
             } finally {
@@ -33,18 +44,23 @@ const Prov1 = () => {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        if (quizzes.length > 0) {
+            setShuffledWords(shuffleArray(quizzes[currentQuizIndex].missingWords)); 
+        }
+    }, [currentQuizIndex, quizzes]);
+
     const handleWordClick = (word) => {
-        if (selectedWord === null) {  
+        if (selectedWord === null) {
             setSelectedWord(word);
         }
     };
 
     const handleNextQuiz = () => {
         const currentQuiz = quizzes[currentQuizIndex];
-        const correctAnswer = currentQuiz.missingWords[0]; 
-        console.log('Current Quiz:', currentQuiz); 
-    
-        const isCorrect = selectedWord === currentQuiz.missingWords[0];
+        const correctAnswer = currentQuiz.correctAnswer; 
+
+        const isCorrect = selectedWord === correctAnswer;
 
         setUserSelections(prev => ({ ...prev, [currentQuizIndex]: selectedWord }));
 
@@ -60,6 +76,44 @@ const Prov1 = () => {
         }
     };
 
+            saveResultToDatabase(); 
+        }
+    };
+
+
+    const saveResultToDatabase = async () => {
+        const resultData = {
+            totalQuestions: quizzes.length,
+            correctAnswers: correctAnswersCount
+        };
+
+        try {
+            const response = await fetch('https://localhost:7196/api/QuizResults', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(resultData)
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to save quiz result');
+            }
+
+            console.log('Result saved successfully');
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
     if (showResult) {
         return (
             <div className="quiz-container">
@@ -67,7 +121,7 @@ const Prov1 = () => {
                 <p>You got {correctAnswersCount} out of {quizzes.length} correct!</p>
                 <ul>
                     {quizzes.map((quiz, index) => {
-                        const correctAnswer = quiz.missingWords[0];
+                        const correctAnswer = quiz.correctAnswer;
                         const userAnswer = userSelections[index];
                         const isCorrect = userAnswer === correctAnswer;
 
@@ -90,55 +144,54 @@ const Prov1 = () => {
                     })}
                 </ul>
         </div>
+                <br />
+                <br />
+                <button className="ResetQuizButton" onClick={() => window.location.reload()}>Restart Quiz</button>
+            </div>
         );
     }
 
     const currentQuiz = quizzes[currentQuizIndex];
 
     return (
+        <div>
+            <Navbar />
+            <div className="quiz-container">
+                <h1>Quiz Application</h1>
+                <div className="quiz-item">
+                    <h2>English Text</h2>
+                    <p>{currentQuiz.englishText.replace('___', '______')}</p>
+                    <h2>Swedish Text</h2>
+                    <p>{currentQuiz.swedishText}</p>
+                    <h3>Choose the correct missing word:</h3>
+                    <div className="button-container">
+                        {shuffledWords.map((word, index) => {
+                            const isWordCorrect = word === currentQuiz.correctAnswer;
+                            const isSelected = selectedWord === word;
 
+                            const buttonClass = isSelected ? 'word-button selected' : 'word-button';
 
-       <div>
-         <Navbar />
-   
-        <div className="quiz-container">
-            <h1>Quiz Application</h1>
-            <div className="quiz-item">
-                <h2>English Text</h2>
-                <p>{currentQuiz.englishText.replace('___', '______')}</p>
-                <h2>Swedish Text</h2>
-                <p>{currentQuiz.swedishText}</p>
-                <h3>Choose the correct missing word:</h3>
-                <div className="button-container">
-                 
-                        {currentQuiz.missingWords.map((word, index) => {
-                        const isWordCorrect = word === currentQuiz.missingWords[0];
-                        const isSelected = selectedWord === word;
-
-                      
-                        const buttonClass = isSelected ? 'word-button selected' : 'word-button';
-
-                        return (
-                            <button 
-                                key={index} 
-                                className={buttonClass}
-                                style={{ backgroundColor: isSelected && isWordCorrect ? 'green' : isSelected ? 'red' : '' }}
-                                onClick={() => handleWordClick(word)}
-                            >
-                                {word}
-                            </button >
-                        );
-                    })}
+                            return (
+                                <button
+                                    key={index}
+                                    className={buttonClass}
+                                    style={{ backgroundColor: isSelected && isWordCorrect ? 'green' : isSelected ? 'red' : '' }}
+                                    onClick={() => handleWordClick(word)}
+                                >
+                                    {word}
+                                </button>
+                            );
+                        })}
+                    </div>
                 </div>
+                <button className="nextButton"
+                    onClick={handleNextQuiz}
+                    disabled={selectedWord === null}
+                >
+                    Next
+                </button>
             </div>
-            <button className="nextButton"
-                onClick={handleNextQuiz} 
-                disabled={selectedWord === null}
-            >
-                Next
-            </button>
-            </div>
-            </div>
+        </div>
     );
 };
 

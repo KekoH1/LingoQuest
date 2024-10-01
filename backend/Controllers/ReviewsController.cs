@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq; 
 
+
 namespace backend.Controllers
 {
     [Route("api/[controller]")]
@@ -21,13 +22,15 @@ namespace backend.Controllers
         public IActionResult GetAllReviews()
         {
             var reviews = _context.Reviews.ToList(); 
+
             return Ok(reviews);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetReview(int id)
         {
-            var review = _context.Reviews.Find(id); 
+
+            var review = _context.Reviews.Find(id);
             if (review == null)
             {
                 return NotFound();
@@ -37,16 +40,18 @@ namespace backend.Controllers
 
         [HttpPost]
         public IActionResult CreateReview([FromBody] Reviews review) 
+
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Reviews.Add(review); 
+
+            _context.Reviews.Add(review);
             _context.SaveChanges();
 
-            return CreatedAtAction(nameof(GetReview), new { id = review.Id }, review); 
+            return CreatedAtAction(nameof(GetReview), new { id = review.Id }, review);
         }
 
         
