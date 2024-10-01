@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using backend.Data;
 
@@ -10,9 +11,11 @@ using backend.Data;
 namespace backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20241001122654_AddGrammarQuiz")]
+    partial class AddGrammarQuiz
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0-rc.1.24451.1");
@@ -38,26 +41,6 @@ namespace backend.Migrations
                     b.HasKey("id");
 
                     b.ToTable("GrammarQuiz");
-                });
-
-            modelBuilder.Entity("backend.ProvModul.GrammaticResult", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("CorrectAnswers")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("SubmittedAt")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("TotalQuestions")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GrammaticResults");
                 });
 
             modelBuilder.Entity("backend.ProvModul.QuizResult", b =>

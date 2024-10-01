@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../../assets/prov1.css';
 import Navbar from '../../components/navbar';
 
-
 const Prov1 = () => {
     const [quizzes, setQuizzes] = useState([]);
     const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
@@ -14,7 +13,6 @@ const Prov1 = () => {
     const [userSelections, setUserSelections] = useState({});
     const [shuffledWords, setShuffledWords] = useState([]);
 
-  
     const shuffleArray = (array) => {
         const shuffled = [...array];
         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -58,7 +56,7 @@ const Prov1 = () => {
 
     const handleNextQuiz = () => {
         const currentQuiz = quizzes[currentQuizIndex];
-        const correctAnswer = currentQuiz.correctAnswer; 
+        const correctAnswer = currentQuiz.correctAnswer;
 
         const isCorrect = selectedWord === correctAnswer;
 
@@ -73,13 +71,9 @@ const Prov1 = () => {
             setSelectedWord(null);
         } else {
             setShowResult(true);
+            saveResultToDatabase(); // Save results when the quiz ends
         }
     };
-
-            saveResultToDatabase(); 
-        }
-    };
-
 
     const saveResultToDatabase = async () => {
         const resultData = {
@@ -116,6 +110,8 @@ const Prov1 = () => {
 
     if (showResult) {
         return (
+            <div>
+                <Navbar />
             <div className="quiz-container">
                 <h1>Quiz Results</h1>
                 <p>You got {correctAnswersCount} out of {quizzes.length} correct!</p>
@@ -143,10 +139,10 @@ const Prov1 = () => {
                         );
                     })}
                 </ul>
-        </div>
                 <br />
                 <br />
                 <button className="ResetQuizButton" onClick={() => window.location.reload()}>Restart Quiz</button>
+            </div>
             </div>
         );
     }
