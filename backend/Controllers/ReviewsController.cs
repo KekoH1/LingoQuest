@@ -48,5 +48,24 @@ namespace backend.Controllers
 
             return CreatedAtAction(nameof(GetReview), new { id = review.Id }, review); // Returnerar den skapade review
         }
+
+        
+        [HttpDelete("all")]
+        public IActionResult DeleteAllReviews()
+        {
+            var reviews = _context.Reviews.ToList();
+            if (!reviews.Any())
+            {
+                return NotFound();
+            }
+
+            _context.Reviews.RemoveRange(reviews);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
+
+
     }
 }

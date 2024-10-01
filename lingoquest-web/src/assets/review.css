@@ -113,7 +113,7 @@ button[type="submit"]:hover {
 .previous-review p {
     margin: 5px 0;
     color: #555;
-    text-align: center;
+    text-align: justify;
     width: 100%;
 }
 

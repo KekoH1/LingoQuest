@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace backend.ProvModul
 {
@@ -13,4 +14,15 @@ namespace backend.ProvModul
         [Required, EmailAddress]
         public string Email { get; set; }
     }
+
+    public class Review
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        // other properties
+    }
+
+
 }
+
