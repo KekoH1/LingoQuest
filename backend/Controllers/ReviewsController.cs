@@ -2,7 +2,8 @@
 using backend.ProvModul;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using System.Linq; 
+
 
 namespace backend.Controllers
 {
@@ -20,13 +21,15 @@ namespace backend.Controllers
         [HttpGet]
         public IActionResult GetAllReviews()
         {
-            var reviews = _context.Reviews.ToList();
+            var reviews = _context.Reviews.ToList(); 
+
             return Ok(reviews);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetReview(int id)
         {
+
             var review = _context.Reviews.Find(id);
             if (review == null)
             {
@@ -36,17 +39,38 @@ namespace backend.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateReview([FromBody] Reviews review)
+        public IActionResult CreateReview([FromBody] Reviews review) 
+
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
+
             _context.Reviews.Add(review);
             _context.SaveChanges();
 
             return CreatedAtAction(nameof(GetReview), new { id = review.Id }, review);
         }
+
+        
+        [HttpDelete("all")]
+        public IActionResult DeleteAllReviews()
+        {
+            var reviews = _context.Reviews.ToList();
+            if (!reviews.Any())
+            {
+                return NotFound();
+            }
+
+            _context.Reviews.RemoveRange(reviews);
+            _context.SaveChanges();
+
+            return NoContent();
+        }
+
+
+
     }
 }

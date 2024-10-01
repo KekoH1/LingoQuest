@@ -33,7 +33,7 @@ Curabitur eget blandit enim, sit amet semper urna. Nullam vel nulla tellus. Susp
 
 
         <ul className="menubuttons" >
-            <li><a href="test">Testa din kunskap</a></li>
+            <li><a href="/prov">Testa din kunskap</a></li>
         </ul>
 
     </div>

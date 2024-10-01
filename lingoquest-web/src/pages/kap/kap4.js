@@ -33,7 +33,7 @@ function kap4 () {
     
     
                 <ul className="menubuttons" >
-                    <li><a href="test">Testa din kunskap</a></li>
+                    <li><a href="/prov">Testa din kunskap</a></li>
                 </ul>
     
             </div>

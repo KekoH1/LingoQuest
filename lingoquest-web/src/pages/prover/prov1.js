@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../../assets/prov1.css';
 import Navbar from '../../components/navbar';
 
+
 const Prov1 = () => {
     const [quizzes, setQuizzes] = useState([]);
     const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
@@ -72,6 +73,9 @@ const Prov1 = () => {
             setSelectedWord(null);
         } else {
             setShowResult(true);
+        }
+    };
+
             saveResultToDatabase(); 
         }
     };
@@ -139,6 +143,7 @@ const Prov1 = () => {
                         );
                     })}
                 </ul>
+        </div>
                 <br />
                 <br />
                 <button className="ResetQuizButton" onClick={() => window.location.reload()}>Restart Quiz</button>
