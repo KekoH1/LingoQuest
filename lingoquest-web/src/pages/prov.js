@@ -11,8 +11,8 @@ const Prov = () => {
       <nav>
         <ul className="provbutton">
           <li><Link to="/prov1">Enkel Prov</Link></li>
-          <li><Link to="/prov2">Medium Prov</Link></li>
-          <li><Link to="/prov3">Hard Prov</Link></li>
+          <li><Link to="/prov2">Mellan Prov</Link></li>
+          <li><Link to="/prov3">Svår Prov</Link></li>
         </ul>
       </nav>
 

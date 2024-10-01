@@ -17,10 +17,10 @@ function Home() {
                 <h3>Det nya snabba sättet att lära sig nya språk</h3>
                 <div>
                     <ul className="menubuttons" >
-                        <li><Link to="Checklist">Välkommen</Link></li>
+                        <li><Link to="Checklist">Checklista</Link></li>
                         <li><Link to="theory">Teori</Link></li>
                         <li><Link to="prov">Prov</Link></li>
-                        <li><Link to="Statestik">Statistik</Link></li>
+                        <li><Link to="statestik">Statistik</Link></li>
                     </ul>
                 </div>
             </main>

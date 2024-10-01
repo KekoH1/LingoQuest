@@ -9,14 +9,13 @@ const LabelChecklist = () => {
 
   useEffect(() => {
     setLabel([
-      { id: 1, subject: "CheckBox1", selected: false },
-      { id: 2, subject: "CheckBox2", selected: false },
-      { id: 3, subject: "CheckBox3", selected: false },
-      { id: 4, subject: "CheckBox4", selected: false },
-      { id: 5, subject: "CheckBox5", selected: false },
-      { id: 6, subject: "CheckBox6", selected: false },
-      { id: 7, subject: "CheckBox7", selected: false },
-      { id: 8, subject: "CheckBox8", selected: false },
+      { id: 2, subject: "Kapitel 1: Historia", selected: false },
+      { id: 3, subject: "Kapitel 2: Moderna språket", selected: false },
+      { id: 4, subject: "Kapitel 3: Verb", selected: false },
+      { id: 5, subject: "Kapitel 4: Sammanfattning", selected: false },
+      { id: 6, subject: "Enkel prov", selected: false },
+      { id: 7, subject: "mellan prov", selected: false },
+      { id: 8, subject: "Svår prov", selected: false },
     ]);
   }, []);
 
