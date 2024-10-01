@@ -71,7 +71,7 @@ const Prov1 = () => {
             setSelectedWord(null);
         } else {
             setShowResult(true);
-            saveResultToDatabase(); // Save results when the quiz ends
+            saveResultToDatabase(); 
         }
     };
 

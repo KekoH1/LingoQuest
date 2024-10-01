@@ -13,6 +13,7 @@ import Kap4 from './pages/kap/kap4';
 import Prov from './pages/prov';  
 import Prov1 from './pages/prover/prov1';
 import Prov2 from './pages/prover/prov2';
+import Prov3 from './pages/prover/prov3';
 import Reviw from './pages/review';
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/prov" element={<Prov />} />
        <Route path="/prov1" element={<Prov1/>} />
        <Route path="/prov2" element={<Prov2/>} />
+       <Route path="/prov3" element={<Prov3/>} />
        <Route path="/review" element={<Reviw/>} />
       </Routes>
     </Router> 
