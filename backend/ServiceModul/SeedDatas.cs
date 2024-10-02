@@ -1,5 +1,4 @@
-﻿
-using backend.Data;
+﻿using backend.Data;
 using backend.ProvModul;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -89,7 +88,7 @@ namespace backend.ServiceModul
                 context.Quizzes.AddRange(quizzes);
             }
 
-          
+         
             if (!context.GrammarQuiz.Any())
             {
                 var grammarQuiz = new List<GrammarQuiz>
@@ -201,7 +200,7 @@ namespace backend.ServiceModul
                 context.GrammarQuiz.AddRange(grammarQuiz);
             }
 
-          
+         
             if (!context.ImageModels.Any())
             {
                 var imageModels = new List<ImageModel>
@@ -210,90 +209,89 @@ namespace backend.ServiceModul
                     {
                         Id = 1,
                         ImagePath = "image1.jpg",
-                        Question = "Vad är denna bild?",
-                        Options = new List<string> { "Katt", "Hund", "Bil", "Hus" },
-                        CorrectAnswer = "Hund"
+                        Question = "What is in this image?",
+                        Options = new List<string> { "Cat", "Dog", "Car", "House" },
+                        CorrectAnswer = "Dog"
                     },
                     new ImageModel
                     {
                         Id = 2,
                         ImagePath = "image2.jpg",
-                        Question = "Vilken typ av fordon är detta?",
-                        Options = new List<string> { "Cykel", "Båt", "Bil", "Flygplan" },
-                        CorrectAnswer = "Bil"
+                        Question = "What type of vehicle is this?",
+                        Options = new List<string> { "Bicycle", "Boat", "Car", "Airplane" },
+                        CorrectAnswer = "Car"
                     },
                     new ImageModel
                     {
                         Id = 3,
                         ImagePath = "image3.jpg",
-                        Question = "Vad föreställer denna bild?",
-                        Options = new List<string> { "Blomma", "Träd", "Buss", "Hus" },
-                        CorrectAnswer = "Blomma"
+                        Question = "What does this image show?",
+                        Options = new List<string> { "Flower", "Tree", "Bus", "House" },
+                        CorrectAnswer = "Flower"
                     },
                     new ImageModel
                     {
                         Id = 4,
                         ImagePath = "image4.jpg",
-                        Question = "Vilken frukt visas på bilden?",
-                        Options = new List<string> { "Äpple", "Banan", "Druva", "Apelsin" },
-                        CorrectAnswer = "Banan"
+                        Question = "What fruit is shown in the image?",
+                        Options = new List<string> { "Apple", "Banana", "Grape", "Orange" },
+                        CorrectAnswer = "Banana"
                     },
                     new ImageModel
                     {
                         Id = 5,
                         ImagePath = "image5.jpg",
-                        Question = "Vilken typ av djur är detta?",
-                        Options = new List<string> { "Hund", "Fisk", "Fågel", "Katt" },
-                        CorrectAnswer = "Katt"
+                        Question = "What type of animal is this?",
+                        Options = new List<string> { "Dog", "Fish", "Bird", "Cat" },
+                        CorrectAnswer = "Cat"
                     },
                     new ImageModel
                     {
                         Id = 6,
                         ImagePath = "image6.jpg",
-                        Question = "Vad heter detta fordon?",
-                        Options = new List<string> { "Tåg", "Buss", "Bil", "Cykel" },
-                        CorrectAnswer = "Buss"
+                        Question = "What is the name of this vehicle?",
+                        Options = new List<string> { "Train", "Bus", "Car", "Bicycle" },
+                        CorrectAnswer = "Bus"
                     },
                     new ImageModel
                     {
                         Id = 7,
                         ImagePath = "image7.jpg",
-                        Question = "Vilken dryck är detta?",
-                        Options = new List<string> { "Kaffe", "Te", "Vatten", "Juice" },
-                        CorrectAnswer = "Te"
+                        Question = "What drink is this?",
+                        Options = new List<string> { "Coffee", "Tea", "Water", "Juice" },
+                        CorrectAnswer = "Tea"
                     },
                     new ImageModel
                     {
                         Id = 8,
                         ImagePath = "image8.jpg",
-                        Question = "Vad är detta objekt?",
-                        Options = new List<string> { "Penna", "Skrivbok", "Dator", "Mobil" },
-                        CorrectAnswer = "Dator"
+                        Question = "What is this object?",
+                        Options = new List<string> { "Pen", "Notebook", "Computer", "Phone" },
+                        CorrectAnswer = "Computer"
                     },
                     new ImageModel
                     {
                         Id = 9,
                         ImagePath = "image9.jpg",
-                        Question = "Vilken naturtyp ser du här?",
-                        Options = new List<string> { "Hav", "Berg", "Skog", "Öken" },
-                        CorrectAnswer = "Skog"
+                        Question = "What type of nature is shown here?",
+                        Options = new List<string> { "Ocean", "Mountain", "Forest", "Desert" },
+                        CorrectAnswer = "Forest"
                     },
                     new ImageModel
                     {
                         Id = 10,
                         ImagePath = "image10.jpg",
-                        Question = "Vilket sportverktyg visas på bilden?",
-                        Options = new List<string> { "Fotboll", "Tennisracket", "Basketboll", "Golfklubba" },
-                        CorrectAnswer = "Tennisracket"
+                        Question = "Which sports tool is shown in the image?",
+                        Options = new List<string> { "Football", "Tennis racket", "Basketball", "Golf club" },
+                        CorrectAnswer = "Tennis racket"
                     }
                 };
 
                 context.ImageModels.AddRange(imageModels);
             }
 
-        
+         
             context.SaveChanges();
         }
     }
 }
-
