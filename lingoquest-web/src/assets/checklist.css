@@ -1,61 +1,72 @@
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .h1 {
-    font-size: 2rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
-  }
-  .h4 {
-    font-size: 1rem;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
-  }
-  .list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
-  }
-  
-  .list li:hover {
-    background-color: #f0f0f0;
-  }
-  
-  input[type="checkbox"] {
-    margin-right: 15px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-  }
-  
-  label {
-    font-size: 1.1rem;
-    color: #555;
-    cursor: pointer;
-  }
-  
-  input[type="checkbox"]:checked + label {
-    text-decoration: line-through;
-    color: #999;
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  color: #ecf0f1; 
+}
+
+h1 {
+  font-size: 2rem;
+  color: #9b59b6; 
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif; 
+}
+
+h4 {
+  font-size: 1rem;
+  color: #ecf0f1;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif; 
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #2e2e2e; 
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.list li:hover {
+  background-color: #3b3b3b; 
+  border-left: 5px solid #9b59b6; 
+}
+
+input[type="checkbox"] {
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #999; 
+}
+
+input[type="checkbox"] {
+  transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #9b59b6; 
+}

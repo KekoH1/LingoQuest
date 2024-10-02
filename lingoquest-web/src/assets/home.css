@@ -2,15 +2,15 @@ body {
     font-family: 'Roboto', sans-serif;
     margin-top: 100px;
     padding: 0;
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White text for contrast */
+    background-color: #000000;
+    color: #ffffff; 
 }
 
 h1 {
     font-size: 2.5em;
     margin: 0;
     margin-top: 100px;
-    color: #1abc9c; /* Teal for headings */
+    color: #1abc9c; 
 }
 
 h2 {
@@ -18,7 +18,7 @@ h2 {
     margin: 0;
     display: flex;
     justify-content: center;
-    color: #ecf0f1; /* Light grey for subheadings */
+    color: #ecf0f1; 
 }
 
 h3 {
@@ -26,7 +26,7 @@ h3 {
     margin: 20px;
     justify-content: center;
     display: flex;
-    color: #bdc3c7; /* Light grey for smaller headings */
+    color: #bdc3c7; 
 }
 
 .container {
@@ -45,7 +45,7 @@ h3 {
 }
 
 #menubuttons button {
-    background-color: #3498db; /* Blue for buttons */
+    background-color: #3498db;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -58,12 +58,12 @@ h3 {
 }
 
 #menubuttons button:hover {
-    background-color: #2980b9; /* Darker blue for hover effect */
+    background-color: #2980b9; 
 }
 
 .menubuttons a { 
     text-decoration: none; 
-    background-color: #8e44ad; /* Purple for links */
+    background-color: #8e44ad;
     color: white;
     padding: 15px 30px;
     font-size: 16px;
@@ -84,7 +84,7 @@ h3 {
 }
 
 .menubuttons a:hover {
-    background-color: #732d91; /* Darker purple on hover */
+    background-color: #732d91;
 }
 
 @media (max-width: 768px) {
