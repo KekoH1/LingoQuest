@@ -4,7 +4,7 @@
     position: fixed;
     left: 1px;
     top: 1px;
-    background-color: #2e2e2e;
+    background-color: #acacac;
     transition: width 0.3s ease, height 0.3s ease;
     overflow: hidden;
     z-index: 10;
@@ -26,14 +26,16 @@
     cursor: pointer;
     background-color: transparent;
     border: none;
-    color: #ffffff; 
+    color: #fff;
     font-size: 24px;
     outline: none;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
 }
+
 .hamburger:hover{
-    background-color: #9b59b6;
+    background-color: transparent;
+    transform: rotate(90deg);
 }
 
 .nav-links {
@@ -49,7 +51,7 @@
 .nav-links a {
     padding: 15px 20px;
     text-decoration: none;
-    color: #9b59b6; 
+    color: #fff;
     display: block;
     transition: all 0.3s ease;
     font-size: 18px;
@@ -65,11 +67,11 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-
 .nav-links a:hover {
-    background-color: #9b59b6; 
-    color: #ffffff; 
+    background-color: #555;
+    color: #fff;
 }
+
 
 .reviewbutton {
     display: flex;
@@ -77,7 +79,7 @@
     margin-top: auto;
     margin-bottom: 50px;
     padding: 10px;
-    background-color: #8e44ad; 
+    background-color: #bfbfbf;
     color: white;
     text-align: center;
     border-radius: 5px;
@@ -86,7 +88,7 @@
 }
 
 .reviewbutton:hover {
-    background-color: #732d91; 
+    background-color: #dcdcdc;
     transform: scale(1.05);
 }
 
@@ -98,6 +100,7 @@
 li {
     list-style-type: none;
 }
+
 
 @media (max-width: 768px) {
     .navbar {
@@ -116,3 +119,13 @@ li {
         font-size: 16px;
     }
 }
+
+
+/* Om man vill ha en navbar som är synlig endast på mindre skärmar */
+
+/* 
+@media (min-width: 769px) {
+    .navbar {
+        display: none;
+    }
+} */

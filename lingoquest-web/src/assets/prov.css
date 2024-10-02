@@ -1,10 +1,11 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin-top: 100px;
-    padding: 0;
-    background-color: #2e2e2e; /* Dark grey background */
-    color: #ffffff; /* White text for contrast */
+    padding: center;
+    background-color: #f4f4f4;
+    color: #333;
 }
+
 
 .container {
     max-width: 1200px;
@@ -12,7 +13,8 @@ body {
     padding: 20px;
 }
 
-.provbutton {
+
+.provbutton{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +25,7 @@ body {
 }
 
 #provbutton button {
-    background-color: #3498db; /* Blue for buttons */
+    background-color: #007BFF;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -33,15 +35,19 @@ body {
     transition: background-color 0.3s ease;
     width: 300px;
     height: 45px;
+    
 }
 
 #provbutton button:hover {
-    background-color: #2980b9; /* Darker blue for hover effect */
+    background-color: #0056b3;
+
+    gap: 20px; 
+    margin-top: 50px;
 }
 
 .provbutton a { 
     text-decoration: none; 
-    background-color: #8e44ad; /* Purple for links */
+    background-color: #8e9499; 
     color: white;
     padding: 15px 30px;
     font-size: 16px;
@@ -56,7 +62,7 @@ body {
 }
 
 .provbutton a:hover {
-    background-color: #732d91; /* Darker purple on hover */
+    background-color: #8f9faf; 
 }
 
 @media (max-width: 768px) {
@@ -64,10 +70,12 @@ body {
         padding: 10px;
     }
 
+
     .provbutton {
         flex-direction: column;
         gap: 10px;
     }
+
 
     .provbutton a {
         width: 100%;
