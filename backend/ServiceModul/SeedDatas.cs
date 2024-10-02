@@ -1,4 +1,3 @@
-﻿
 using backend.Data;
 using backend.ProvModul;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -201,7 +200,7 @@ namespace backend.ServiceModul
                 context.GrammarQuiz.AddRange(grammarQuiz);
             }
 
-          
+         
             if (!context.ImageModels.Any())
             {
                 var imageModels = new List<ImageModel>
