@@ -200,7 +200,6 @@ namespace backend.ServiceModul
                 context.GrammarQuiz.AddRange(grammarQuiz);
             }
 
-         
             if (!context.ImageModels.Any())
             {
                 var imageModels = new List<ImageModel>
@@ -290,7 +289,6 @@ namespace backend.ServiceModul
                 context.ImageModels.AddRange(imageModels);
             }
 
-         
             context.SaveChanges();
         }
     }
