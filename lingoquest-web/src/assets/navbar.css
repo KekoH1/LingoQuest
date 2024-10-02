@@ -33,7 +33,8 @@
     transition: transform 0.3s ease;
 }
 
-.hamburger:hover {
+.hamburger:hover{
+    background-color: transparent;
     transform: rotate(90deg);
 }
 
