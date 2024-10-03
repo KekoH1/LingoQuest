@@ -3,6 +3,12 @@ import React, { useEffect, useState } from 'react';
 import '../../assets/prov3.css';
 import Navbar from '../../components/navbar';
 
+
+
+
+
+
+
 const Prov3 = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -140,7 +146,7 @@ const Prov3 = () => {
   const options = currentQuestion.options || [];
 
   return (
-    <div>
+    <div >
       <Navbar />
       <div className="quiz-container">
         <h2>{currentQuestion.question}</h2>
