@@ -9,6 +9,7 @@ import Prov1 from './pages/prover/prov1_native';
 import Prov2 from './pages/prover/prov2_native';
 import Prov3 from './pages/prover/prov3_native';
 import Statestik from './pages/statestik';
+import Review from './pages/review';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +25,7 @@ const App = () => {
         <Stack.Screen name="Prov2" component={Prov2} />
         <Stack.Screen name="Prov3" component={Prov3} />
         <Stack.Screen name="Statestik" component={Statestik} />
-        
+        <Stack.Screen name="Review" component={Review} />
       </Stack.Navigator>
     </NavigationContainer>
   );

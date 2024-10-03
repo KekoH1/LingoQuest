@@ -118,8 +118,8 @@ const styles = StyleSheet.create({
   },
   navbarContainer: {
     position: "absolute",
-    top: 10,
-    left: 10,
+    top: 0,
+    left: 0,
     zIndex: 1,
   },
   chartContainer: {
@@ -144,6 +144,24 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#888",
   },
+
+  
+  '@media (max-width: 768px)': {
+    container: {
+      padding: 10,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    heading: {
+      fontSize: 20,
+    },
+    chartContainer: {
+      width: "100%",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+  },
+
 });
 
 export default Statestik;
