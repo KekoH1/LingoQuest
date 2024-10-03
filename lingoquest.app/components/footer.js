@@ -26,10 +26,12 @@ const Footer = () => {
 
 const styles = StyleSheet.create({
   footer: {
-    padding: 20,
     backgroundColor: '#fff', // Change background color as needed
     alignItems: 'center',
     justifyContent: 'center',
+    bottom: 0,
+    position: 'absolute',
+    height: 0,
   },
   text: {
     fontSize: 14,

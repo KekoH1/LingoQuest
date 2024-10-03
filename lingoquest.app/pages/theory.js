@@ -37,30 +37,46 @@ const Theory = () => {
 };
 // CSS
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   main: {
+    width: '90%',
+    maxWidth: 600,
     padding: 20,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3,
   },
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    textAlign: 'center',
   },
   paragraph: {
     fontSize: 16,
     marginBottom: 10,
+    textAlign: 'center',
   },
   menuButtons: {
     marginTop: 20,
+    width: '100%',
   },
   button: {
     backgroundColor: '#007BFF',
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
+    width: '100%',
   },
   buttonText: {
     color: '#fff',
