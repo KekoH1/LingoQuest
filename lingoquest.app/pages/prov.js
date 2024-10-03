@@ -29,35 +29,38 @@ const Prov = ({ navigation }) => {
 };
 // CSS
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
     backgroundColor: '#fff',
     padding: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   nav: {
     marginTop: 20,
-  },
-  heading: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
+    width: '100%',
+    alignItems: 'center',
   },
   provButtons: {
     flexDirection: 'column',
     alignItems: 'center',
+    width: '100%',
   },
   button: {
     backgroundColor: '#007BFF',
     padding: 15,
     borderRadius: 5,
     marginBottom: 10,
-    width: '100%', 
+    width: '80%', 
   },
-  buttonText: {
-    color: '#fff', 
+
+  heading: {
+    fontSize: 24,
+    fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 16,
-  },
+    marginBottom: 20,
+    },
 });
 
 export default Prov;

@@ -60,20 +60,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 10,
     overflow: 'hidden',
-    transition: 'width 0.3s ease, height 0.3s ease', // Approximate the CSS transition
+    transition: 'width 0.3s ease, height 0.3s ease', 
   },
-  // Navbar closed style (default)
+  
   navbarClosed: {
     width: 60,
     height: 50,
   },
-  // Navbar open style
   navbarOpen: {
     width: 250,
     height: Dimensions.get('window').height,
     borderRadius: 0,
   },
-  // Hamburger button styling
   hamburger: {
     padding: 5,
     backgroundColor: 'transparent',
@@ -86,12 +84,12 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     width: '100%',
     alignItems: 'center',
-    marginTop: 10, // Spacing after the hamburger
+    marginTop: 10, 
   },
   navItem: {
     paddingVertical: 15,
     width: '100%',
-    backgroundColor: '#f0f0f0', // Matches the dropdown background
+    backgroundColor: '#f0f0f0',
     alignItems: 'center',
     borderBottomWidth: 1,
     borderBottomColor: '#8e9499',
@@ -101,7 +99,7 @@ const styles = StyleSheet.create({
     color: '#343434',
   },
   reviewButton: {
-    marginTop: 'auto', // Push to the bottom
+    marginTop: 'auto', 
     marginBottom: 50,
     paddingVertical: 10,
     paddingHorizontal: 20,
@@ -111,8 +109,15 @@ const styles = StyleSheet.create({
   },
   reviewButtonHover: {
     backgroundColor: '#dcdcdc',
-    transform: [{ scale: 1.05 }], // Simulate scale on hover
+    transform: [{ scale: 1.05 }], 
   },
+  navbarClosed: {
+    width: 40,
+    height: 45,
+    left: 0,
+    top: -10,
+  },
+
 });
 
 export default Navbar;
