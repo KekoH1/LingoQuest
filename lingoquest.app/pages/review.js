@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import Navbar from "../components/navbar";
 
-const ReviewSection = () => {
+const Review = () => {
   const [reviewName, setReviewName] = useState("");
   const [reviewDescription, setReviewDescription] = useState("");
   const [reviews, setReviews] = useState([]);
@@ -140,6 +140,7 @@ const ReviewSection = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
     padding: 20,
     backgroundColor: "#fff",
   },
@@ -184,6 +185,8 @@ const styles = StyleSheet.create({
   reviewName: {
     fontWeight: "bold",
   },
+
+  
 });
 
-export default ReviewSection;
+export default Review;

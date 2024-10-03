@@ -144,6 +144,24 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#888",
   },
+
+  
+  '@media (max-width: 768px)': {
+    container: {
+      padding: 10,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    heading: {
+      fontSize: 20,
+    },
+    chartContainer: {
+      width: "100%",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+  },
+
 });
 
 export default Statestik;

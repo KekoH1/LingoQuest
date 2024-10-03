@@ -6,6 +6,7 @@ import LabelChecklist from './pages/checklist';
 import Theory from './pages/theory';
 import Prov from './pages/prov';
 import Statestik from './pages/statestik';
+import Review from './pages/review';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const App = () => {
         <Stack.Screen name="Theory" component={Theory} />
         <Stack.Screen name="Prov" component={Prov} />
         <Stack.Screen name="Statestik" component={Statestik} />
+        <Stack.Screen name="Review" component={Review} />
       </Stack.Navigator>
     </NavigationContainer>
   );
