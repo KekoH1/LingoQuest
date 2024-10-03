@@ -1,11 +1,18 @@
 .quiz-container {
-    max-width: 800px;
-    margin: 50px auto;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #7da1aee9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    background:#7da1aee9;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
 }
+
 
 h1 {
     font-size: 2em;
@@ -16,13 +23,17 @@ h1 {
 h3.question {
     font-size: 1.5em;
     margin-bottom: 15px;
+    color: black;
 }
 
 .options {
     list-style: none;
     padding: 0;
     border-radius: 15px;
+    color: black;
 }
+
+
 
 .option {
     padding: 10px;
@@ -102,3 +113,89 @@ ul {
 .error {
     color: #f44336; 
 }
+
+
+.quiz-resultat {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #93b1a2;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.quiz-resultat h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.quiz-resultat p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a6072;
+    margin-bottom: 20px;
+}
+
+.quiz-resultat ul {
+    list-style: none;
+    padding: 0;
+ 
+}
+
+.quiz-resultat li {
+    background-color: #abcac8;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.quiz-resultat li span {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.quiz-resultat li span:first-child {
+    font-weight: bold;
+}
+
+.ResetQuizButton {
+    background-color: #4a6072;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.ResetQuizButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+.resultat-container{
+    background-color: #7da1aee9;
+}
+/* 
+@media (max-width: 768px) {
+    .quiz-resultat {
+        padding: 15px;
+    }
+
+    .quiz-resultat h1 {
+        font-size: 22px;
+    }
+
+    .quiz-resultat p {
+        font-size: 16px;
+    }
+
+    .ResetQuizButton {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+} */

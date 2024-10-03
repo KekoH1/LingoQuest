@@ -97,9 +97,9 @@ const Prov2 = () => {
 
     if (showResult) {
         return (
-            <div>
+            <div className="resultat-container">
                 <Navbar/>
-            <div className="quiz-container">
+            <div className="quiz-resultat">
                 <h1>Quiz Resultat</h1>
                 <p>Du har {correctAnswersCount} av {quizData.length} rätt!</p>
                 <ul>
