@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ActivityIndicator,
+  Dimensions,
+} from "react-native";
 import { PieChart } from "react-native-chart-kit";
 import Navbar from "../components/navbar";
+
+const windowWidth = Dimensions.get("window").width;
 
 const Statestik = () => {
   const [statistics, setStatistics] = useState(null);
@@ -18,7 +26,6 @@ const Statestik = () => {
         }
         const data = await response.json();
         setStatistics(data);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -37,10 +44,9 @@ const Statestik = () => {
   }
 
   if (!statistics || !Array.isArray(statistics)) {
-    return <Text>No data available.</Text>;
+    return <Text style={styles.noDataText}>Ingen data tillgänglig.</Text>;
   }
 
-  // Define static colors for the pie chart
   const staticColors = [
     "#FF6384", // Red
     "#36A2EB", // Blue
@@ -50,24 +56,32 @@ const Statestik = () => {
     "#FF9F40", // Orange
   ];
 
-  // Prepare data for PieChart with static colors
   const pieData = statistics.map((result, index) => ({
     name: result.categoryName,
     population: result.totalScore,
-    color: staticColors[index % staticColors.length], // Cycle through static colors
-    legendFontColor: "#000000", // Change legend font color to black
+    color: staticColors[index % staticColors.length],
+    legendFontColor: "#000000",
     legendFontSize: 15,
   }));
 
   return (
     <View style={styles.container}>
-      <Navbar />
-      <View style={styles.chartContainer}>
+      {/* Position the Navbar in the top-left */}
+      <View style={styles.navbarContainer}>
+        <Navbar />
+      </View>
+
+      {/* Center the chart below the Navbar */}
+      <View
+        style={
+          windowWidth < 768 ? styles.chartContainerSmall : styles.chartContainer
+        }
+      >
         <Text style={styles.heading}>Användarens framsteg</Text>
         <PieChart
           data={pieData}
-          width={300} // You can change this as needed
-          height={220} // You can change this as needed
+          width={windowWidth < 768 ? windowWidth - 40 : 600}
+          height={280}
           chartConfig={{
             backgroundColor: "#ffffff",
             backgroundGradientFrom: "#ffffff",
@@ -82,7 +96,7 @@ const Statestik = () => {
           backgroundColor="transparent"
           paddingLeft="15"
           center={[0, 0]}
-          absolute // Makes the pie chart absolute
+          absolute
         />
       </View>
     </View>
@@ -92,22 +106,43 @@ const Statestik = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "flex-start",
+    alignItems: "center",
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
   loadingContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  navbarContainer: {
+    position: "absolute",
+    top: 10,
+    left: 10,
+    zIndex: 1,
   },
   chartContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: "40%",
+    maxWidth: 600,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  chartContainerSmall: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
   },
   heading: {
+    textAlign: "center",
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20,
+  },
+  noDataText: {
+    textAlign: "center",
+    fontSize: 18,
+    color: "#888",
   },
 });
 

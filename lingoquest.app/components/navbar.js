@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Animated, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigation = useNavigation(); // Use the navigation hook
+  const windowWidth = Dimensions.get('window').width;
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, isOpen ? styles.navbarOpen : styles.navbarClosed]}>
       <TouchableOpacity style={styles.hamburger} onPress={toggleMenu}>
         <Text style={styles.hamburgerText}>&#9776;</Text>
       </TouchableOpacity>
@@ -48,36 +49,69 @@ const Navbar = () => {
 };
 
 const styles = StyleSheet.create({
+  // Initial navbar style
   container: {
-    backgroundColor: '#fff', // Adjust as needed
-    padding: 10,
+    position: 'absolute',
+    left: 1,
+    top: 1,
+    backgroundColor: '#acacac',
+    zIndex: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    paddingTop: 10,
+    overflow: 'hidden',
+    transition: 'width 0.3s ease, height 0.3s ease', // Approximate the CSS transition
   },
+  // Navbar closed style (default)
+  navbarClosed: {
+    width: 60,
+    height: 50,
+  },
+  // Navbar open style
+  navbarOpen: {
+    width: 250,
+    height: Dimensions.get('window').height,
+    borderRadius: 0,
+  },
+  // Hamburger button styling
   hamburger: {
-    padding: 10,
+    padding: 5,
+    backgroundColor: 'transparent',
   },
   hamburgerText: {
+    color: '#fff',
     fontSize: 24,
   },
   navLinks: {
-    backgroundColor: '#f0f0f0', // Background for the dropdown
-    borderRadius: 5,
-    padding: 10,
-    position: 'absolute', // To position the dropdown
-    top: 50, // Adjust based on your design
-    right: 0,
-    width: 150, // Set width as needed
+    flexDirection: 'column',
+    width: '100%',
+    alignItems: 'center',
+    marginTop: 10, // Spacing after the hamburger
   },
   navItem: {
-    paddingVertical: 10,
+    paddingVertical: 15,
+    width: '100%',
+    backgroundColor: '#f0f0f0', // Matches the dropdown background
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#8e9499',
   },
   navText: {
     fontSize: 18,
+    color: '#343434',
   },
   reviewButton: {
+    marginTop: 'auto', // Push to the bottom
+    marginBottom: 50,
     paddingVertical: 10,
-    backgroundColor: '#007BFF', // Style for review button
+    paddingHorizontal: 20,
+    backgroundColor: '#bfbfbf',
     borderRadius: 5,
-    marginTop: 10,
+    alignItems: 'center',
+  },
+  reviewButtonHover: {
+    backgroundColor: '#dcdcdc',
+    transform: [{ scale: 1.05 }], // Simulate scale on hover
   },
 });
 

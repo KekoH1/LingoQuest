@@ -1,5 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, CheckBox } from 'react-native'; // Assuming you're using React Native components
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  StyleSheet,
+  CheckBox,
+} from "react-native";
+import Navbar from "../components/navbar";
 
 const LabelChecklist = () => {
   const [labels, setLabel] = useState([]);
@@ -25,19 +33,80 @@ const LabelChecklist = () => {
   };
 
   return (
-    <View>
-      <Text>Välkommen till LingoQuest</Text>
-      {labels.map((label) => (
-        <View key={label.id}>
-          <CheckBox
-            value={label.selected}
-            onValueChange={() => handleSelection(label.id)}
-          />
-          <Text>{label.subject}</Text>
-        </View>
-      ))}
+    <View style={styles.container}>
+      <Navbar />
+      <Text style={styles.h1}>Välkommen till LingoQuest</Text>
+      <Text style={styles.h4}>Här kan du ha koll på dina framsteg.</Text>
+      <Text style={styles.h4}>
+        💡Följ de för att snabbt lära dig det nya språket.
+      </Text>
+
+      <FlatList
+        data={labels}
+        renderItem={({ item }) => (
+          <View style={styles.listItem}>
+            <CheckBox
+              value={item.selected}
+              onValueChange={() => handleSelection(item.id)}
+            />
+            <TouchableOpacity onPress={() => handleSelection(item.id)}>
+              <Text
+                style={[styles.label, item.selected && styles.labelChecked]}
+              >
+                {item.subject}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        )}
+        keyExtractor={(item) => item.id.toString()}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "#f9f9f9",
+    borderRadius: 10,
+  },
+  h1: {
+    fontSize: 24,
+    color: "#333",
+    textAlign: "center",
+    marginBottom: 20,
+    fontWeight: "bold",
+  },
+  h4: {
+    fontSize: 16,
+    color: "#333",
+    textAlign: "center",
+    marginBottom: 20,
+  },
+  listItem: {
+    flexDirection: "row",
+    alignItems: "center", 
+    justifyContent: "center", 
+    marginBottom: 10,
+    padding: 10,
+    backgroundColor: "#fff",
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  label: {
+    fontSize: 18,
+    color: "#555",
+    marginLeft: 10, 
+    flexShrink: 1, 
+  },
+  labelChecked: {
+    textDecorationLine: "line-through",
+    color: "#999",
+  },
+});
 
 export default LabelChecklist;
