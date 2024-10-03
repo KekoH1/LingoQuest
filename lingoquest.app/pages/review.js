@@ -27,6 +27,7 @@ const Review = () => {
           throw new Error("Failed to fetch reviews");
         }
         const data = await response.json();
+        console.log(data);
         setReviews(data);
       } catch (error) {
         setError(error.message);
@@ -80,7 +81,7 @@ const Review = () => {
     <ScrollView style={styles.container}>
       <Navbar />
       <View style={styles.reviewSection}>
-        <Text style={styles.heading}>Submit Your Review</Text>
+        <Text style={styles.heading} id="h2">Submit Your Review</Text>
         <View style={styles.formElement}>
           <Text>Your Name:</Text>
           <TextInput
@@ -140,12 +141,13 @@ const Review = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
-    padding: 20,
+    padding: 10,
     backgroundColor: "#fff",
   },
   reviewSection: {
     marginBottom: 20,
+    paddingBottom: 20,
+    paddingTop: 35,
   },
   previousReview: {
     marginTop: 20,
