@@ -63,7 +63,7 @@ const LabelChecklist = () => {
     </View>
   );
 };
-
+// CSS
 const styles = StyleSheet.create({
   container: {
     flex: 1,

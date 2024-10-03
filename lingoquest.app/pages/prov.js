@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import Navbar from '../components/navbar'; // Ensure this is adapted for React Native
+import Navbar from '../components/navbar';
 
 const Prov = ({ navigation }) => {
   const navigateToProv = (provLevel) => {
-    navigation.navigate(provLevel); // Using React Navigation for screen navigation
+    navigation.navigate(provLevel);
   };
 
   return (
     <View style={styles.container}>
-      <Navbar /> {/* Make sure Navbar is a React Native compatible component */}
+      <Navbar /> {}
       <View style={styles.nav}>
         <Text style={styles.heading}>Välj Prov Nivå:</Text>
         <View style={styles.provButtons}>
@@ -27,11 +27,11 @@ const Prov = ({ navigation }) => {
     </View>
   );
 };
-
+// CSS
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff', // Adjust background color as needed
+    backgroundColor: '#fff',
     padding: 20,
   },
   nav: {
@@ -47,14 +47,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   button: {
-    backgroundColor: '#007BFF', // Button color
+    backgroundColor: '#007BFF',
     padding: 15,
     borderRadius: 5,
     marginBottom: 10,
-    width: '100%', // Full width button
+    width: '100%', 
   },
   buttonText: {
-    color: '#fff', // Text color
+    color: '#fff', 
     textAlign: 'center',
     fontSize: 16,
   },

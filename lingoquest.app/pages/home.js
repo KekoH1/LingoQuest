@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Navbar from '../components/navbar'; // Make sure this path is correct
-import Footer from '../components/footer'; // Assuming you have a Footer component
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,10 +14,10 @@ function Home() {
 
   return (
     <View style={styles.container}>
-      {/* Include the Navbar at the top */}
+      {}
       <Navbar />
 
-      {/* Main content goes below the Navbar */}
+      {}
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}>LingoQuest</Text>
         <Text style={styles.subtitle}>Det nya snabba sättet att lära sig nya språk</Text>
@@ -43,7 +43,7 @@ function Home() {
     </View>
   );
 }
-
+// CSS
 const styles = StyleSheet.create({
   container: {
     flex: 1,

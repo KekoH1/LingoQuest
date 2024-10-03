@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Linking, StyleSheet } from 'react-native';
-import Navbar from '../components/navbar'; // Assuming you have a Navbar component adapted for React Native
+import Navbar from '../components/navbar';
 
 const Theory = () => {
   const handleLinkPress = (url) => {
@@ -9,7 +9,7 @@ const Theory = () => {
 
   return (
     <View style={styles.container}>
-      <Navbar /> {/* Assuming Navbar is converted to a React Native component */}
+      <Navbar /> {}
       <View style={styles.main}>
         <Text style={styles.heading}>Teori</Text>
         <Text style={styles.paragraph}>Det finns många olika sätt att lära sig nya språk</Text>
@@ -35,7 +35,7 @@ const Theory = () => {
     </View>
   );
 };
-
+// CSS
 const styles = StyleSheet.create({
   container: {
     flex: 1,

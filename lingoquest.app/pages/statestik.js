@@ -66,12 +66,12 @@ const Statestik = () => {
 
   return (
     <View style={styles.container}>
-      {/* Position the Navbar in the top-left */}
+      {}
       <View style={styles.navbarContainer}>
         <Navbar />
       </View>
 
-      {/* Center the chart below the Navbar */}
+      {}
       <View
         style={
           windowWidth < 768 ? styles.chartContainerSmall : styles.chartContainer
@@ -102,7 +102,7 @@ const Statestik = () => {
     </View>
   );
 };
-
+// CSS
 const styles = StyleSheet.create({
   container: {
     flex: 1,
