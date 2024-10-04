@@ -30,6 +30,7 @@ const Prov1 = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
+                console.log(data);
                 setQuizzes(data);
                 setShuffledWords(shuffleArray(data[0].missingWords)); 
             } catch (error) {
@@ -50,6 +51,7 @@ const Prov1 = () => {
 
     const handleWordClick = (word) => {
         if (selectedWord === null) {
+            console.log(`You selected: ${word}`);
             setSelectedWord(word);
         }
     };
@@ -62,6 +64,9 @@ const Prov1 = () => {
 
         setUserSelections(prev => ({ ...prev, [currentQuizIndex]: selectedWord }));
 
+        console.log(`Question ${currentQuizIndex + 1}: Selected answer: ${selectedWord}, Correct answer: ${correctAnswer}`);
+        console.log(isCorrect ? "Correct!" : "Incorrect!");
+
         if (isCorrect) {
             setCorrectAnswersCount(prevCount => prevCount + 1);
         }
@@ -71,6 +76,7 @@ const Prov1 = () => {
             setSelectedWord(null);
         } else {
             setShowResult(true);
+            console.log(`Quiz finished! You got ${correctAnswersCount + (isCorrect ? 1 : 0)} out of ${quizzes.length} correct.`);
             saveResultToDatabase(); 
         }
     };
