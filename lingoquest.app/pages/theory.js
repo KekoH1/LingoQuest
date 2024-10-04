@@ -1,15 +1,20 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Linking, StyleSheet } from 'react-native';
 import Navbar from '../components/navbar';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 const Theory = () => {
-  const handleLinkPress = (url) => {
-    Linking.openURL(url);
+  const navigation = useNavigation();
+
+  const navigateTo = (screen) => {
+    navigation.navigate(screen);
   };
 
   return (
     <View style={styles.container}>
-      <Navbar /> {}
+      <Navbar />
       <View style={styles.main}>
         <Text style={styles.heading}>Teori</Text>
         <Text style={styles.paragraph}>Det finns många olika sätt att lära sig nya språk</Text>
@@ -18,16 +23,16 @@ const Theory = () => {
         <Text style={styles.paragraph}>Lycka till!</Text>
         
         <View style={styles.menuButtons}>
-          <TouchableOpacity onPress={() => handleLinkPress('kap1')} style={styles.button}>
+          <TouchableOpacity onPress={() => navigateTo('Kap1_native')} style={styles.button}>
             <Text style={styles.buttonText}>Kapitel 1. Historia</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => handleLinkPress('kap2')} style={styles.button}>
+          <TouchableOpacity onPress={() => navigateTo('Kap2_native')} style={styles.button}>
             <Text style={styles.buttonText}>Kapitel 2. Moderna Språket</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => handleLinkPress('kap3')} style={styles.button}>
+          <TouchableOpacity onPress={() => navigateTo('Kap3_native')} style={styles.button}>
             <Text style={styles.buttonText}>Kapitel 3. Verb</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => handleLinkPress('kap4')} style={styles.button}>
+          <TouchableOpacity onPress={() => navigateTo('Kap4_native')} style={styles.button}>
             <Text style={styles.buttonText}>Kapitel 4. Sammanfattning</Text>
           </TouchableOpacity>
         </View>
@@ -35,7 +40,8 @@ const Theory = () => {
     </View>
   );
 };
-// CSS
+
+
 const styles = StyleSheet.create({
   
   container: {
