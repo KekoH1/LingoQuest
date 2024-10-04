@@ -20,6 +20,7 @@ const Prov3 = () => {
           throw new Error('Nätverksresponsen var inte okej');
         }
         const data = await response.json();
+        console.log(data);
         setQuestions(data);
       } catch (error) {
         console.error("Det gick inte att hämta frågorna", error);
@@ -34,14 +35,23 @@ const Prov3 = () => {
       setSelectedOption(option);
       setAnswerSelected(true); 
 
+      const currentQuestion = questions[currentQuestionIndex];
+      const isCorrect = option === currentQuestion.correctAnswer;
+
+      console.log(`Fråga: ${currentQuestion.question}`);
+      console.log(`Valt alternativ: ${option}`);
+      console.log(`Korrekt svar: ${currentQuestion.correctAnswer}`);
+      console.log(isCorrect ? "Rätt svar!" : "Fel svar!");
+
+      if (isCorrect) {
+        setCorrectAnswersCount(prevCount => prevCount + 1);
+      }
+    }
+  };
+
+  const handleNextQuestion = () => {
     const currentQuestion = questions[currentQuestionIndex];
     const isCorrect = selectedOption === currentQuestion.correctAnswer;
-
-
-    if (isCorrect) {
-      setCorrectAnswersCount(prevCount => prevCount + 1);
-    }
-
 
     setResults(prevResults => [
       ...prevResults,
@@ -52,13 +62,15 @@ const Prov3 = () => {
       },
     ]);
 
-  
+    console.log(`Resultat hittills: ${correctAnswersCount} rätt av ${currentQuestionIndex + 1} frågor.`);
+
     if (currentQuestionIndex + 1 < questions.length) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedOption('');
       setAnswerSelected(false); 
     } else {
       setShowResults(true);
+      console.log(`Quiz avslutat! Du fick ${correctAnswersCount} av ${questions.length} rätt.`);
       saveResultsToDatabase(); 
     }
   };

@@ -23,6 +23,7 @@ const Prov2 = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
+                console.log(data);
                 setQuizData(data);
             } catch (error) {
                 setError(error.message);
@@ -49,6 +50,11 @@ const Prov2 = () => {
 
         setUserAnswers([...userAnswers, answerData]);
 
+        console.log(`Question: ${quizData[currentQuestionIndex].question}`);
+        console.log(`Selected Answer: ${option}`);
+        console.log(`Correct Answer: ${quizData[currentQuestionIndex].correctAnswer}`);
+        console.log(isCorrect ? "Correct!" : "Incorrect!");
+
         if (isCorrect) {
             setCorrectAnswersCount(prevCount => prevCount + 1);
         }
@@ -61,6 +67,7 @@ const Prov2 = () => {
             setIsOptionSelected(false);
         } else {
             setShowResult(true); 
+            console.log(`Quiz finished! You got ${correctAnswersCount} out of ${quizData.length} correct.`);
             saveResultToDatabase(); 
         }
     };
