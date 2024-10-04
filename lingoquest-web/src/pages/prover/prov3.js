@@ -3,12 +3,6 @@ import React, { useEffect, useState } from 'react';
 import '../../assets/prov3.css';
 import Navbar from '../../components/navbar';
 
-
-
-
-
-
-
 const Prov3 = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -36,14 +30,10 @@ const Prov3 = () => {
   }, []);
 
   const handleOptionSelect = (option) => {
-   
     if (!answerSelected) {
       setSelectedOption(option);
       setAnswerSelected(true); 
-    }
-  };
 
-  const handleNextQuestion = () => {
     const currentQuestion = questions[currentQuestionIndex];
     const isCorrect = selectedOption === currentQuestion.correctAnswer;
 
@@ -157,11 +147,9 @@ const Prov3 = () => {
         />
         <div className="options-container">
           {options.map((option, index) => {
-          
             const isSelected = selectedOption === option;
             const isCorrect = option === currentQuestion.correctAnswer;
 
-        
             let buttonClass = 'option-button';
             if (answerSelected) { 
               if (isSelected) {
