@@ -1,16 +1,21 @@
-
 .quiz-container {
-    max-width: 800px;
+    max-width: 100%;
     margin: 20px auto;
     padding: 20px; 
     border-radius: 8px; 
-    background-color: #7da1aee9; 
+    background-color: #97cad1e9; 
     box-shadow: 0 4px 8px rgba(0, 33, 201, 0.66); 
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
 }
 
 h1 {
     text-align: center; 
-    font-size: 2.5em; 
+    font-size: 1.8; 
     color: #333333; 
 }
 
@@ -18,17 +23,19 @@ h1 {
     border: 1px solid #e0e0e0; 
     border-radius: 5px; 
     margin-bottom: 20px; 
-    padding: 15px; 
+    padding: 10px; 
     background-color: #e4f7f5; 
+    width: 100%; 
+    max-width: 800px;
 }
 
 h2 {
-    font-size: 1.5em; 
+    font-size: 1.3em; 
     color: #555555; 
 }
 
 h3 {
-    font-size: 1.2em; 
+    font-size: 1.1em; 
     color: #777777; 
 }
 
@@ -43,7 +50,7 @@ h3 {
 
 .word-button {
     margin: 5px; 
-    padding: 10px 300px; 
+    padding: 10px 20px; 
     border: none; 
     border-radius: 15px;
     background-color: #8e9499;
@@ -52,6 +59,8 @@ h3 {
     transition: background-color 0.3s; 
     font-size: 1em; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    width: 100%; 
+    max-width: 300px; 
     
     
 }
@@ -160,9 +169,41 @@ h3 {
 
 
 
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 10px;
+    }
 
+    h1 {
+        font-size: 1.5em; /* Mindre för mobil */
+    }
 
+    h2 {
+        font-size: 1.2em; /* Mindre rubrik för mobil */
+    }
 
+    h3 {
+        font-size: 1em;
+    }
 
+    .quiz-item {
+        width: 100%; /* Anpassad för mobil */
+    }
 
+    .word-button {
+        padding: 10px; /* Gör knapparna mindre */
+        max-width: 100%; /* Låt knapparna ta hela bredden på små skärmar */
+    }
 
+    .review-form {
+        padding: 10px; /* Mindre padding på mobil */
+    }
+
+    .review-form button {
+        padding: 8px 15px;
+    }
+
+    .ResetQuizButton {
+        padding: 8px 15px;
+    }
+}

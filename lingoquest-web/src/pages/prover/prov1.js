@@ -13,7 +13,6 @@ const Prov1 = () => {
     const [userSelections, setUserSelections] = useState({});
     const [shuffledWords, setShuffledWords] = useState([]);
 
-  
     const shuffleArray = (array) => {
         const shuffled = [...array];
         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -31,6 +30,7 @@ const Prov1 = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
+                console.log(data);
                 setQuizzes(data);
                 setShuffledWords(shuffleArray(data[0].missingWords)); 
             } catch (error) {
@@ -51,17 +51,21 @@ const Prov1 = () => {
 
     const handleWordClick = (word) => {
         if (selectedWord === null) {
+            console.log(`You selected: ${word}`);
             setSelectedWord(word);
         }
     };
 
     const handleNextQuiz = () => {
         const currentQuiz = quizzes[currentQuizIndex];
-        const correctAnswer = currentQuiz.correctAnswer; 
+        const correctAnswer = currentQuiz.correctAnswer;
 
         const isCorrect = selectedWord === correctAnswer;
 
         setUserSelections(prev => ({ ...prev, [currentQuizIndex]: selectedWord }));
+
+        console.log(`Question ${currentQuizIndex + 1}: Selected answer: ${selectedWord}, Correct answer: ${correctAnswer}`);
+        console.log(isCorrect ? "Correct!" : "Incorrect!");
 
         if (isCorrect) {
             setCorrectAnswersCount(prevCount => prevCount + 1);
@@ -72,10 +76,10 @@ const Prov1 = () => {
             setSelectedWord(null);
         } else {
             setShowResult(true);
+            console.log(`Quiz finished! You got ${correctAnswersCount + (isCorrect ? 1 : 0)} out of ${quizzes.length} correct.`);
             saveResultToDatabase(); 
         }
     };
-
 
     const saveResultToDatabase = async () => {
         const resultData = {
@@ -112,6 +116,8 @@ const Prov1 = () => {
 
     if (showResult) {
         return (
+            <div>
+                <Navbar />
             <div className="quiz-container">
                 <h1>Quiz Results</h1>
                 <p>You got {correctAnswersCount} out of {quizzes.length} correct!</p>
@@ -142,6 +148,7 @@ const Prov1 = () => {
                 <br />
                 <br />
                 <button className="ResetQuizButton" onClick={() => window.location.reload()}>Restart Quiz</button>
+            </div>
             </div>
         );
     }

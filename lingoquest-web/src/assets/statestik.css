@@ -1,0 +1,29 @@
+.statistik-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  padding: 20px;
+}
+
+.pie-chart {
+  width: 40%;
+  max-width: 600px;
+}
+
+.pie-chart h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .statistik-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .pie-chart {
+    width: 100%;
+    max-width: none;
+  }
+}

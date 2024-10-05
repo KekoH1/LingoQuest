@@ -12,6 +12,10 @@ import Kap3 from './pages/kap/kap3';
 import Kap4 from './pages/kap/kap4';
 import Prov from './pages/prov';  
 import Prov1 from './pages/prover/prov1';
+import Prov2 from './pages/prover/prov2';
+import Prov3 from './pages/prover/prov3';
+import Reviw from './pages/review';
+import Statestik from './pages/statestik';
 
 import LabelChecklist from './pages/checklist';
 
@@ -29,6 +33,10 @@ function App() {
         <Route path="/kap4" element={<Kap4/>} />
         <Route path="/prov" element={<Prov />} />
        <Route path="/prov1" element={<Prov1/>} />
+       <Route path="/prov2" element={<Prov2/>} />
+       <Route path="/prov3" element={<Prov3/>} />
+       <Route path="/review" element={<Reviw/>} />
+       <Route path="/statestik" element={<Statestik/>} />
       </Routes>
     </Router> 
     
